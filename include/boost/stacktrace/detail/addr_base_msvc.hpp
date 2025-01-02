@@ -31,7 +31,7 @@ namespace boost { namespace stacktrace { namespace detail {
   inline std::uintptr_t get_own_proc_addr_base(const void* addr) {
         // Try to avoid allocating memory for the modules array if possible.
         // The stack buffer should be large enough for most processes.
-        HMODULE modules_stack[1024];
+        HMODULE modules_stack[1];
         std::unique_ptr<HMODULE[]> modules_allocated;
         HMODULE* modules = modules_stack;
 
